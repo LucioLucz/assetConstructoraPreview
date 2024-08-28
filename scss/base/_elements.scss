@@ -1,0 +1,194 @@
+@use "abstracts" as *;
+
+/***************************************
+* Elements
+***************************************/
+/* Native elements with Client-First classes applied. */
+.form-component {
+    margin-bottom: 0rem;
+}
+
+.form-form {
+    display: block;
+}
+.form-field-wrapper,
+.form-input {
+    width: 100%;
+}
+.form-field-wrapper {
+    display: flex;
+    row-gap: 18px;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 0;
+    max-width: 80px;
+    color: $color-primary;
+    font-weight: 600;
+}
+
+.form-input {
+    outline: none;
+    border: 1px solid $border-color;
+    border-radius: 0;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    min-height: 3rem;
+    color: $color-black;
+    font-size: inherit;
+
+    &:focus {
+        border-color: $color-secondary;
+    }
+}
+
+.is-text-area {
+    @extend .form-input;
+    padding-top: 0.75rem;
+    min-height: 8rem;
+}
+.is-select-input {
+    @extend .form-input;
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    background: transparent;
+    width: 40px;
+    height: 100%;
+    color: $color-primary;
+}
+
+/* Hide the browser's default checkbox */
+input[type="checkbox"],
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+/* Create a custom checkbox */
+.form-checkbox,
+.form-radiobox {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.form-checkbox-label {
+    margin-left: 2.5rem;
+}
+
+.form-checkmark,
+.form-radio {
+    position: relative;
+    z-index: 1;
+}
+
+.form-checkmark::before {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    background-color: #eee;
+    width: 25px;
+    height: 25px;
+    content: "";
+    font-family: "FontAwesome";
+}
+
+input[type="checkbox"]:checked ~ .form-checkmark::before {
+    background-color: rgb(41, 55, 255);
+    content: "\f00c";
+    color: #fff;
+}
+
+// Create a custom radio-check
+.form-radio-label {
+    margin-left: 1rem;
+}
+.form-radio {
+    display: inline-block;
+    border: 1px solid #ededed;
+    border-radius: 50%;
+    background-color: #eee;
+    width: 25px;
+    height: 25px;
+}
+.form-radio::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    content: "";
+}
+
+input[type="radio"]:checked ~ .form-radio::before {
+    background-color: rgb(41, 55, 255);
+}
+
+.radio-list {
+    margin: 0;
+}
+
+// Comment
+.comment-list {
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+}
+
+.comment-item {
+    background-color: $color-grey-white;
+    padding: 35px;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+.comment-reply-item {
+    margin-bottom: -1px;
+    border-top: 1px solid $border-color;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    overflow: hidden;
+
+    @include breakpoint(large) {
+        padding-left: 40px;
+    }
+    @include breakpoint(xlarge) {
+        padding-left: 55px;
+    }
+
+    &:first-child {
+        margin-top: 35px;
+        padding-top: 35px;
+    }
+}
+
+.comment-user {
+    &-name {
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 18px;
+        font-family: $title-font;
+    }
+}

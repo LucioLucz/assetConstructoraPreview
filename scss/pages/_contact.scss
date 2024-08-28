@@ -1,0 +1,37 @@
+@use "abstracts" as *;
+/***************************************
+* - Pages / Contact
+***************************************/
+.contact-info-list {
+    display: flex;
+    row-gap: 30px;
+    flex-direction: column;
+}
+.contact-info-item {
+    border: 1px solid $border-color;
+    padding: 40px 40px;
+
+    h3 {
+        margin-bottom: 10px;
+    }
+}
+
+.contact-info-meta-list {
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+    strong {
+        color: $color-primary;
+    }
+}
+
+.g-map-block {
+    width: 100%;
+    height: 320px;
+    @include breakpoint(large) {
+        height: 450px;
+    }
+    @include breakpoint(xlarge) {
+        height: 100%;
+    }
+}

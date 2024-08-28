@@ -1,0 +1,31 @@
+@use "abstracts" as *;
+/***************************************
+* - Layout / Pagination
+***************************************/
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 70px;
+}
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    border-radius: 50%;
+}
+.page-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    color: $color-primary;
+    font-weight: 700;
+
+    &:hover {
+        border-color: $color-secondary;
+        background-color: $color-secondary;
+        color: $color-white;
+    }
+}

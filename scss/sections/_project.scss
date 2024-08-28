@@ -1,0 +1,133 @@
+@use "abstracts" as *;
+/***************************************
+* - Sections / Project
+***************************************/
+.project-showcase-block {
+    position: relative;
+    z-index: 1;
+}
+
+.project-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-showcase-single-item {
+    display: flex;
+    row-gap: 250px;
+    flex-direction: column;
+    transition: $transition;
+    padding: 30px 15px 50px 15px;
+
+    @include breakpoint(xlarge) {
+        row-gap: 400px;
+        padding: 30px 30px 50px 30px;
+    }
+    &:hover {
+        background-color: rgba($color-secondary, 10%);
+    }
+}
+
+.project-number {
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-color: rgba($color-white, 35%);
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+    font-weight: 700;
+    font-size: 86px;
+    font-family: $title-font;
+}
+
+.project-bottom-content {
+    h2 {
+        font-size: 28px;
+        @include breakpoint(xlarge) {
+            font-size: 32px;
+        }
+        @include breakpoint(xxlarge) {
+            font-size: 40px;
+        }
+    }
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.project-tag-link {
+    border: 1px solid rgba($color-white, 7%);
+    background-color: rgba($color-white, 3%);
+    padding: 5px 18px;
+    color: rgba($color-white, 85%);
+    font-size: 14px;
+
+    &:hover {
+        background-color: $color-secondary;
+        color: $color-white;
+    }
+}
+
+.project-list--2 {
+    li:not(:last-child) {
+        margin-bottom: 55px;
+        border-bottom: 1px solid rgba($color-white, 15%);
+        padding-bottom: 55px;
+    }
+}
+
+.project-slider-wrapper {
+    margin-left: auto;
+    max-width: 1600px;
+}
+
+.project-single-item {
+    position: relative;
+}
+
+.project-slider-content {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 60px);
+}
+
+.project-round-button {
+    display: inline-flex;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $color-white;
+    width: 46px;
+    height: 46px;
+    color: $color-primary;
+    font-size: 24px;
+
+    &:hover {
+        background-color: $color-secondary;
+        color: $color-white;
+    }
+}
+
+.project-list--3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(xlarge) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

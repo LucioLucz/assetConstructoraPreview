@@ -1,0 +1,99 @@
+@use "abstracts" as *;
+/***************************************
+* - Sections / Team
+***************************************/
+.work-progress-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-between;
+    gap: 40px;
+
+    @include breakpoint(small) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(large) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px;
+    }
+    @include breakpoint(xlarge) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &:hover {
+            .work-progress-icon {
+                background: $color-secondary;
+                & img:first-child {
+                    opacity: 0;
+                }
+
+                & img:last-child {
+                    position: absolute;
+                    opacity: 1;
+                }
+            }
+        }
+
+        @include breakpoint(small) {
+            &:nth-child(even) {
+                flex-direction: column-reverse;
+
+                .work-progress-icon {
+                    margin-top: 10px;
+                }
+
+                .work-progress-content {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+.work-progress-icon {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: $transition;
+    border-radius: 50%;
+    background: $color-grey-white;
+    width: 58px;
+    height: 58px;
+
+    & img:first-child {
+        opacity: 1;
+    }
+
+    & img:last-child {
+        position: absolute;
+        opacity: 0;
+    }
+}
+
+.work-progress-content {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    @include breakpoint(small) {
+        margin-bottom: 35px;
+    }
+    h3 {
+        margin-bottom: 4px;
+    }
+}
+
+.work-progress-number {
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-color: rgba($color-primary, 25%);
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+    font-weight: 700;
+    font-size: 86px;
+    line-height: 1;
+    font-family: $title-font;
+}

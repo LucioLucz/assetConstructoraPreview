@@ -1,0 +1,20 @@
+@use "abstracts" as *;
+/***************************************
+* - Sections / Countup
+***************************************/
+.countup-text{
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1.15;
+    font-family: $title-font;
+    @include breakpoint(large) {
+        font-size: 52px;
+    }
+    @include breakpoint(xlarge) {
+        font-size: 66px;
+    }
+    @include breakpoint(xxlarge) {
+        font-size: 86px;
+    }
+}

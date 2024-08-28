@@ -1,0 +1,230 @@
+@use "abstracts" as *;
+/***************************************
+* - Layout / Header
+***************************************/
+
+.header-wrapper {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 30px;
+    z-index: 99;
+    background-color: $color-secondary;
+    width: 100%;
+
+    @include breakpoint(large) {
+        gap: 0 60px;
+        background-color: transparent;
+    }
+
+    @include breakpoint(xxlarge) {
+        gap: 0 0px;
+    }
+
+    &--2 {
+        position: static;
+
+        @include breakpoint(large) {
+            position: absolute;
+        }
+    }
+}
+
+.header-container {
+    position: relative;
+    flex: 1;
+    padding-right: 20px;
+
+    @include breakpoint(xxlarge) {
+        padding-right: 100px;
+    }
+    .horizontal-line {
+        display: none;
+        width: 100%;
+
+        @include breakpoint(xlarge) {
+            display: block;
+        }
+    }
+}
+
+.header-logo {
+    display: inline-block;
+    position: relative;
+    background-color: $color-secondary;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-block: 20px;
+
+    @include breakpoint(xlarge) {
+        background-color: transparent;
+        padding-right: 90px;
+        padding-left: 40px;
+        padding-block: 45px;
+    }
+    @include breakpoint(xxlarge) {
+        padding-right: 120px;
+        padding-left: 40px;
+        padding-block: 45px;
+    }
+    @include breakpoint(xxxlarge) {
+        padding-right: 250px;
+        padding-left: 100px;
+    }
+
+    &::after {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: -70px;
+        transform: skewX(-40deg);
+        z-index: -1;
+        background-color: $color-secondary;
+        width: 100%;
+        height: 100%;
+        content: "";
+
+        @include breakpoint(xlarge) {
+            display: block;
+        }
+    }
+    &::before {
+        display: none;
+        position: absolute;
+        top: calc(50% - 4px);
+        left: 0;
+        z-index: -1;
+        background: $border-color;
+        width: 100%;
+        height: 1px;
+        content: "";
+
+        @include breakpoint(xlarge) {
+            display: block;
+            width: 120%;
+        }
+        @include breakpoint(xxlarge) {
+            width: 100%;
+        }
+    }
+
+    &.is-white {
+        &::before {
+            background: rgba($color-white, 15%);
+        }
+    }
+}
+
+.header-top,
+.header-bottom {
+    display: flex;
+    column-gap: 30px;
+    row-gap: 15px;
+    justify-content: space-between;
+    margin-left: auto;
+    padding-block: 20px;
+    max-width: 1176px;
+    font-size: 14px;
+}
+
+.header-top {
+    display: none;
+    @include breakpoint(xlarge) {
+        display: flex;
+    }
+
+    &.is-white {
+        color: rgba($color-white, 65%);
+    }
+}
+
+.header-top-right-side {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-info-list {
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+
+    li {
+        display: flex;
+        column-gap: 6px;
+        align-items: center;
+    }
+}
+
+.header-social-links {
+    display: flex;
+    column-gap: 12px;
+    font-size: 16px;
+}
+
+.header-bottom {
+    justify-content: flex-end;
+    margin: 0px;
+    padding-block: 0;
+    font-size: inherit;
+    @include breakpoint(xlarge) {
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-left: auto;
+    }
+}
+
+.header-event {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $color-primary;
+    font-weight: 700;
+
+    @include breakpoint(xxx) {
+        gap: 20px;
+    }
+
+    &.is-white {
+        color: $color-white;
+
+        i {
+            @include breakpoint(large) {
+                filter: invert(1);
+            }
+        }
+    }
+
+    i {
+        color: $color-white;
+        font-size: 24px;
+
+        @include breakpoint(large) {
+            color: $color-primary;
+            font-size: 20px;
+        }
+    }
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $color-primary;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        &:hover {
+            border-color: $color-secondary;
+            background-color: $color-secondary;
+            color: $color-white;
+        }
+    }
+}

@@ -1,0 +1,276 @@
+@use "abstracts" as *;
+/***************************************
+*  - Sections / Team
+***************************************/
+.team-list--1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px 24px;
+
+    padding-bottom: 100px;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(xlarge) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint(xlarge) {
+        margin-bottom: -230px;
+        padding-bottom: 0px;
+    }
+
+    .team-item {
+        background: $color-white;
+        text-align: center;
+        &:hover {
+            .team-social-links {
+                bottom: calc(0% + 25px);
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .team-content {
+                background-color: $color-secondary;
+                span,
+                p {
+                    color: rgba($color-white, 75%);
+                }
+
+                h3 {
+                    border-color: rgba($color-white, 15%);
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    .team-thumbnails {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team-social-links {
+        display: flex;
+        position: absolute;
+        bottom: calc(0% - 40px);
+        justify-content: center;
+        gap: 10px;
+        visibility: hidden;
+        opacity: 0;
+        transition: $transition;
+        width: 100%;
+        a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: $transition;
+            border-radius: 50%;
+            background-color: $color-white;
+            width: 40px;
+            height: 40px;
+            color: $color-primary;
+
+            &:hover {
+                background-color: $color-tertiary;
+                color: $color-white;
+            }
+        }
+    }
+
+    .team-content {
+        margin-top: -6px;
+        border: 1px solid $border-color;
+        border-top: transparent;
+        padding: 30px 30px 40px 30px;
+
+        h3 {
+            margin-bottom: 10px;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 10px;
+        }
+
+        h3,
+        span,
+        p {
+            transition: $transition;
+        }
+    }
+}
+
+.team-list--2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 40px;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+    @include breakpoint(large) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint(xlarge) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 84px;
+    }
+
+    .team-item {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        @include breakpoint(xlarge) {
+            flex-direction: row;
+            align-items: center;
+        }
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .team-thumbnails {
+        @include breakpoint(large) {
+            width: 270px;
+        }
+    }
+
+    .team-content-top {
+        margin-bottom: 25px;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 25px;
+
+        @include breakpoint(large) {
+            max-width: 323px;
+        }
+        h3 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 20px;
+
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+
+        h3,
+        span,
+        p {
+            transition: $transition;
+        }
+    }
+
+    .team-social-links {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+
+        a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: $transition;
+            border-radius: 50%;
+            background-color: $color-grey-white;
+            width: 40px;
+            height: 40px;
+            color: $color-primary;
+
+            &:hover {
+                background-color: $color-secondary;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.team-list--3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px 24px;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(xlarge) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-item {
+        background: $color-white;
+        text-align: center;
+        &:hover {
+            .team-social-links {
+                bottom: calc(0% + 25px);
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .team-content {
+                background-color: $color-secondary;
+                span,
+                p {
+                    color: rgba($color-white, 75%);
+                }
+
+                h3 {
+                    border-color: rgba($color-white, 15%);
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    .team-thumbnails {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team-social-links {
+        display: flex;
+        position: absolute;
+        bottom: calc(0% - 40px);
+        justify-content: center;
+        gap: 10px;
+        visibility: hidden;
+        opacity: 0;
+        transition: $transition;
+        width: 100%;
+        a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: $transition;
+            border-radius: 50%;
+            background-color: $color-white;
+            width: 40px;
+            height: 40px;
+            color: $color-primary;
+
+            &:hover {
+                background-color: $color-tertiary;
+                color: $color-white;
+            }
+        }
+    }
+
+    .team-content {
+        margin-top: -6px;
+        border: 1px solid $border-color;
+        border-top: transparent;
+        padding: 30px 30px 40px 30px;
+
+        h3 {
+            margin-bottom: 10px;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 10px;
+        }
+
+        h3,
+        span,
+        p {
+            transition: $transition;
+        }
+    }
+}

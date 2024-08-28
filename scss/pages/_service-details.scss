@@ -1,0 +1,21 @@
+@use "abstracts" as *;
+/***************************************
+* - Pages / Service-Details
+***************************************/
+.service-top-content {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: $color-grey-white;
+    padding: 20px 30px;
+
+    @include breakpoint(medium) {
+        transform: translateY(-50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 50px 60px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+}

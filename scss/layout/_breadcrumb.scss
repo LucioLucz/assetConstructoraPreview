@@ -1,0 +1,93 @@
+@use "abstracts" as *;
+/***************************************
+* - Layout / Breadcrumb
+***************************************/
+.breadcrumb-space {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @include breakpoint(large) {
+        padding-top: 196px;
+        padding-bottom: 60px;
+    }
+    @include breakpoint(xlarge) {
+        padding-top: 196px;
+        padding-bottom: 60px;
+    }
+}
+
+.breadcrumb-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding-inline: 20px;
+
+    @include breakpoint(large) {
+        gap: 80px;
+        padding-inline: 40px;
+    }
+    @include breakpoint(xlarge) {
+        gap: 100px;
+        padding-inline: 40px;
+    }
+    @include breakpoint(xxlarge) {
+        padding-inline: 80px;
+    }
+    @include breakpoint(xxxlarge) {
+        padding-inline: 100px;
+    }
+}
+
+.breadcrumb-right-block {
+    max-width: 624px;
+}
+.breadcrumb-left-block {
+    display: none;
+    max-width: 748px;
+    @include breakpoint(medium) {
+        display: block;
+    }
+}
+
+.breadcrumb {
+    &-item {
+        color: $color-secondary;
+        font-weight: 500;
+
+        &.active {
+            color: rgba($color-white, 75%);
+
+            &::before {
+                color: rgba($color-white, 75%);
+            }
+        }
+    }
+}
+
+.breadcrumb-content {
+    p {
+        margin-block: 20px;
+        color: rgba($color-white, 75%);
+    }
+}
+
+.breadcrumb-img {
+    position: relative;
+    
+
+    img:nth-child(2) {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+    }
+}
+
+.bradecrumb-shape {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 125px);
+    transform: translateX(-50%);
+    z-index: -1;
+    width: 203px;
+    height: 232px;
+}

@@ -1,0 +1,144 @@
+@use "abstracts" as *;
+/***************************************
+ - Sections / Hero - 1
+***************************************/
+.hero-area {
+    display: grid;
+
+    &--1 {
+        grid-template-columns: repeat(1, 1fr);
+        align-items: end;
+        gap: 40px;
+        padding-top: 177px;
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+        overflow: hidden;
+
+        @include breakpoint(medium) {
+            grid-template-columns: 1fr 0.6fr;
+            gap: 60px;
+        }
+
+        @include breakpoint(xxlarge) {
+            grid-template-columns: 1fr 500px;
+            gap: 100px;
+            margin-inline: auto;
+            padding-inline-start: 24px;
+            padding-inline-end: 24px;
+            max-width: 1320px;
+        }
+        @include breakpoint(xxxlarge) {
+            grid-template-columns: 1fr 0.6fr;
+            align-items: end;
+            gap: 160px;
+            margin-inline: 0;
+            padding-inline-start: 100px;
+            padding-inline-end: 305px;
+            max-width: 100%;
+        }
+    }
+}
+
+.hero-top,
+.hero-bottom {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content-block {
+    padding-top: 0px;
+    padding-bottom: 60px;
+    @include breakpoint(xlarge) {
+        padding-top: 60px;
+        padding-bottom: 115px;
+    }
+
+    h1 {
+        margin-bottom: 15px;
+        @include breakpoint(xlarge) {
+            margin-bottom: 25px;
+        }
+    }
+    p {
+        margin-bottom: 25px;
+        font-size: 16px;
+        line-height: 1.54;
+
+        @include breakpoint(medium) {
+            font-size: 18px;
+        }
+        @include breakpoint(xlarge) {
+            margin-bottom: 45px;
+            font-size: 20px;
+        }
+        @include breakpoint(xxlarge) {
+            font-size: 22px;
+        }
+    }
+}
+
+.hero-image-block {
+    position: relative;
+    z-index: 1;
+
+    &--1 {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        max-width: 500px;
+
+        @include breakpoint(xlarge) {
+            transform: translateX(-80px);
+        }
+        @include breakpoint(xxlarge) {
+            transform: translateX(0px);
+        }
+
+        img:nth-child(1) {
+            transform: translateY(15px);
+        }
+    }
+}
+
+.hero-shape-img {
+    position: absolute;
+    z-index: -1;
+
+    &--1 {
+        @include breakpoint(xxxlarge) {
+            right: 0;
+            bottom: -190px;
+        }
+    }
+}
+
+// Hero Abstract
+.hero-stripe-1 {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 190px;
+    transform: rotate(40deg);
+    z-index: -1;
+    background-color: $color-secondary;
+    width: 223px;
+    height: 860px;
+
+    @include breakpoint(xxlarge) {
+        display: block;
+        bottom: -111px;
+        width: 227px;
+    }
+    @include breakpoint(xxxlarge) {
+        bottom: 178px;
+    }
+}
+
+.abstract-img-hero--1 {
+    position: absolute;
+    top: 75px;
+    left: 166px;
+    z-index: -1;
+    width: 134px;
+    height: 88px;
+}

@@ -1,0 +1,78 @@
+@use "abstracts" as *;
+/***************************************
+* - Layout / Sidebar
+***************************************/
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: $color-grey-white;
+    padding: 30px;
+}
+
+.sidebar-title {
+    margin-bottom: 20px;
+}
+
+// Sidebar - Category
+.category-list {
+    display: flex;
+    row-gap: 15px;
+    flex-direction: column;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+// Sidebar - Recent Post
+.recent-post-list {
+    display: flex;
+    row-gap: 15px;
+    flex-direction: column;
+}
+.recent-post-item {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.recent-post-img-link {
+    border-radius: 4px;
+    width: 110px;
+    height: 92px;
+    overflow: hidden;
+}
+
+.recent-post-link {
+    margin-bottom: 10px;
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: $title-font;
+}
+
+.post-meta-icon {
+    color: $color-secondary;
+}
+
+// Sidebar - Tag List
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.tag-item .btn-tag {
+    border: 1px solid $border-color;
+    background-color: transparent;
+    padding: 6px 18px;
+    &:hover {
+        border-color: $color-tertiary;
+        background-color: $color-tertiary;
+        color: $color-white;
+    }
+}

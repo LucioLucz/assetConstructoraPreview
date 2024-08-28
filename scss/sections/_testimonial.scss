@@ -1,0 +1,143 @@
+@use "abstracts" as *;
+/***************************************
+* - Sections / Testimonial
+***************************************/
+.testimonial-bg-orange {
+    display: flex;
+    position: relative;
+    align-items: end;
+    z-index: 1;
+    background: $color-secondary;
+    padding-left: 50px;
+    height: calc(100% - 28px);
+}
+
+.testimonial-area--1 {
+    position: relative;
+    z-index: 0;
+    background-color: $color-grey-white;
+    padding: 40px;
+
+    @include breakpoint(medium) {
+        padding: 35px 60px 38px 112px;
+    }
+    @include breakpoint(xxlarge) {
+        padding: 60px 60px 47px 112px;
+    }
+
+    blockquote {
+        margin-top: 23px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.54;
+
+        @include breakpoint(large) {
+            font-size: 20px;
+        }
+        @include breakpoint(xlarge) {
+            font-size: 22px;
+        }
+    }
+
+    .testimonial-button-block {
+        display: inline-flex;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        z-index: 1;
+        margin-top: 40px;
+        background-color: $color-tertiary;
+        padding: 8px 25px;
+
+        @include breakpoint(medium) {
+            position: absolute;
+            margin-right: 40px;
+        }
+
+        div {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    .triangle-tl-shape {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-top: 100px solid $color-secondary;
+        border-right: 100px solid transparent;
+        width: 0;
+        height: 0;
+
+        @include breakpoint(medium) {
+            display: inline-block;
+        }
+    }
+    .triangle-br-shape {
+        display: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        border-bottom: 100px solid $color-white;
+        border-left: 100px solid transparent;
+        width: 0;
+        height: 0;
+
+        @include breakpoint(medium) {
+            display: inline-block;
+        }
+    }
+}
+
+.testimonial-user-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 50px;
+}
+
+.testimonial-user-name {
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 22px;
+    font-family: $title-font;
+}
+
+.testimonial-area--2 {
+    position: relative;
+    .testimonial-button-block {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+        width: 100%;
+    }
+}
+
+.testimonial-block-item--2 {
+    margin-top: 60px;
+    blockquote {
+        margin-bottom: 60px;
+        color: $color-primary;
+        text-align: center;
+        font: {
+            family: $title-font;
+            size: 22px;
+            weight: 700;
+        }
+    }
+
+    .testimonial-user-info {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 50px;
+    }
+}

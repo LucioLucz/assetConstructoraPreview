@@ -1,0 +1,124 @@
+@use "abstracts" as *;
+/***************************************
+* - Layout / Footer
+***************************************/
+.footer-widget {
+    color: rgba($color-white, 85%);
+}
+.footer-about {
+    background-color: $color-secondary;
+    padding: 40px 45px;
+
+    .footer-logo {
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+}
+
+.footer-info-list {
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+    margin-top: 25px;
+    border-top: 1px solid rgba($color-white, 15%);
+    padding-top: 25px;
+    li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: medium;
+        font-size: 14px;
+    }
+
+    a {
+        color: $color-white;
+        &:hover {
+            color: $color-white;
+            text-decoration: underline;
+        }
+    }
+}
+.footer-title {
+    margin-bottom: 15px;
+    color: $color-white;
+
+    @include breakpoint(large) {
+        margin-top: 60px;
+    }
+}
+
+.footer-nav {
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+
+    a {
+        color: rgba($color-white, 85%);
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+.footer-form {
+    display: flex;
+    row-gap: 15px;
+    flex-direction: column;
+    margin-top: 35px;
+    input,
+    button {
+        transition: $transition;
+        outline: none;
+        border: 1px solid rgba($color-white, 15%);
+        background-color: $color-primary;
+        padding: 15px 24px;
+        width: 100%;
+        color: $color-white;
+        font-size: 14px;
+
+        &::placeholder {
+            color: rgba($color-white, 65%);
+        }
+
+        &:focus {
+            border-color: $color-secondary;
+        }
+    }
+
+    button {
+        border-color: $color-secondary;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-secondary;
+        }
+    }
+}
+
+.copyright-text {
+    border-top: 1px solid rgba($color-white, 15%);
+    padding-block: 25px;
+    color: rgba($color-white, 85%);
+    text-align: center;
+    a {
+        color: $color-secondary;
+    }
+}
+
+.footer-abstruct img {
+    position: absolute;
+    z-index: -1;
+
+    &:nth-child(1) {
+        top: 164px;
+        left: 128px;
+    }
+    &:nth-child(2) {
+        bottom: 97px;
+        left: 105px;
+    }
+    &:nth-child(3) {
+        right: 144px;
+        bottom: 124px;
+    }
+}

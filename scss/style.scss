@@ -1,0 +1,74 @@
+
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Konsta
+    Template Description: Konsta - Construction HTML Template
+    Version: 1.0.0
+
+-----------------------------------------------------------------------------------
+
+   [Table of contents]
+    ===================
+
+    * Base - Default
+
+    + Components:
+        - Components / Button
+        - Components / Navber
+        - Components / Accordion
+
+     + Sections:
+         - Sections / Hero - 1
+         - Sections / Hero - 2
+         - Sections / Hero - 3
+         - Sections / Countup
+         - Sections / Service
+         - Sections / Project
+         - Sections / Testimonial
+         - Sections / Team
+         - Sections / Blog
+         - Sections / Pricing
+
+     + Layout:
+        - Layout / Header
+        - Layout / Breadcrumb
+        - Layout / Footer
+        - Layout / Sidebar
+        - Layout / Pagination
+
+     + Pages:
+        - Pages / Contact
+        - Pages / Service-Details
+        - Pages / Project-Details
+        - Pages / Team-Details
+-----------------------------------------------------------------------------------*/
+
+//Abstracts 
+@import "abstracts";
+
+/***************
+* Base - Default 
+****************/
+@import "base";
+
+/***************
++ Components:
+****************/
+@import "components";
+
+/***************
+ + Sections:
+****************/
+@import "sections";
+
+/***************
++ Layout:
+****************/
+@import "layout";
+
+/***************
++ Pages: 
+****************/
+@import "pages";
+
+

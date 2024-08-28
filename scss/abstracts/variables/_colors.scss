@@ -1,0 +1,28 @@
+// Common Color
+$color-black: #000;
+$color-white: #fff;
+
+// Template Color
+// ORIGINALES
+// $color-dark: #1e1c2a;
+// $color-orange: #e55e04;
+// $color-blue: #0043ED;
+// $color-grey-white: #F3F3F4;
+// $color-body: #616161;
+
+// MAQUETA ASSET
+$color-dark: red;
+$color-orange: #339933;
+$color-blue: #000000;
+$color-grey-white: #000000;
+$color-body: #000000;
+
+
+// Theme Color
+$color-primary: $color-dark;
+$color-secondary: $color-orange;
+$color-tertiary : $color-blue;
+$body-color: $color-body;
+
+// Border-color
+$border-color: #dedede;

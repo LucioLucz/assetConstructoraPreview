@@ -1,0 +1,150 @@
+/***************************************
+* - Components / Navber
+***************************************/
+@use "abstracts" as *;
+
+// Header Menu
+.header-nav {
+    &-list {
+        display: flex;
+        gap: 0 30px;
+        font-weight: 500;
+    }
+
+    &-link {
+        color: $color-primary;
+        line-height: 3.25;
+
+        &.is-white {
+            color: rgba($color-white, 85%);
+        }
+    }
+
+    .has-submenu {
+        position: relative;
+        padding-right: 15px;
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-image: url("../img/icons/icon-dark-chevron-down.svg");
+            width: 8px;
+            height: 4px;
+            content: "";
+        }
+        &.is-white::after {
+            filter: invert(1);
+        }
+
+        &:hover .dropdown-menu-list {
+            transform: translateY(0px);
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+.dropdown-menu {
+    &-list {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        row-gap: 10px;
+        flex-direction: column;
+        transform: translateY(15px);
+        visibility: hidden;
+        opacity: 0;
+        z-index: 2;
+        transition: $transition;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        background-color: $color-white;
+        padding: 15px 25px;
+        min-width: 265px;
+    }
+
+    &-item:not(:last-child) {
+        border-bottom: 1px dashed rgba($color-primary, 50%);
+        padding-bottom: 10px;
+    }
+
+    &-link {
+        position: relative;
+        color: $color-primary;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: -25px;
+            transform: scaleY(0);
+            opacity: 0;
+            transition: $transition;
+            background-color: $color-secondary;
+            width: 4px;
+            height: 100%;
+            content: "";
+        }
+
+        &:hover {
+            color: $color-secondary;
+
+            &::before {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.category-menu ul {
+    padding: 0;
+    list-style: none;
+}
+
+.category-menu ul li {
+    position: relative;
+}
+
+.category-menu ul li a {
+    display: block;
+    position: relative;
+    padding: 10px;
+    color: rgba($color-primary, 85%);
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    &:has(~ .subcategory)::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-image: url("../img/icons/icon-dark-chevron-down.svg");
+        width: 8px;
+        height: 4px;
+        content: "";
+    }
+}
+
+.subcategory {
+    transition: max-height 0.3s;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.subcategory.active {
+    max-height: 1000px; /* Adjust this value as needed */
+}
+
+.subcategory li {
+    margin-inline: 10px;
+    border-bottom: 1px solid rgba($color-secondary, 10%);
+}
+
+.subcategory li:last-child {
+    border-bottom: none;
+}
+
+.subcategory a {
+    display: block;
+    text-decoration: none;
+}

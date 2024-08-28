@@ -1,0 +1,150 @@
+@use "abstracts" as *;
+/***************************************
+* - Sections / Blog
+***************************************/
+.blog-list--1 {
+    .blog-item:not(:last-child) {
+        margin-bottom: 40px;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 45px;
+    }
+
+    .blog-left {
+        max-width: 474px;
+    }
+
+    .blog-title {
+        display: block;
+        margin-top: 15px;
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 22px;
+        font-family: $title-font;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+    .blog-center {
+        margin-top: 24px;
+    }
+
+    .blog-right a {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $color-grey-white;
+        width: 75px;
+        height: 75px;
+        color: $color-primary;
+        font-size: 32px;
+
+        @include breakpoint(large) {
+            display: flex;
+        }
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-white;
+        }
+    }
+}
+
+.blog-post-meta {
+    display: flex;
+    gap: 20px;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+}
+.blog-list--2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px 24px;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(large) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .blog-item {
+        background-color: $color-grey-white;
+        padding: 25px;
+    }
+
+    .blog-title {
+        -webkit-box-orient: vertical;
+        display: block;
+        display: -webkit-box;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 22px;
+        font-family: $title-font;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    .blog-thumbnail {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 25px;
+    }
+}
+
+.blog-list--3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px 24px;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(large) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .blog-item {
+        background-color: $color-grey-white;
+        padding: 25px;
+    }
+
+    .blog-title {
+        -webkit-box-orient: vertical;
+        display: block;
+        display: -webkit-box;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 22px;
+        font-family: $title-font;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    .blog-thumbnail {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 25px;
+    }
+}

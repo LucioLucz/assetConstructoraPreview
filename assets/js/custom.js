@@ -1,7 +1,11 @@
 // const { log } = require("console");
 
-let logoSrc = document.querySelector('.logo-asset');
-logoSrc.setAttribute('src', 'assets/img/images/logo/logo-350x222.png');
+let logoSrc = document.querySelectorAll('.logo-asset');
+console.log(logoSrc);
+console.log(logoSrc.src);
+for (let i = 0; i < logoSrc.length; i++) {
+    logoSrc[i].setAttribute('src', 'assets/img/images/logo/logo-350x222.png');
+}
 
 
 // Tamaños de textos en "Categorias"

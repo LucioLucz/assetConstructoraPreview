@@ -61,6 +61,8 @@ a:hover{
     padding-top: 50px;
 }
 
+
+
 .breadcrumb-item{
     color: var(--secundario);
 }
@@ -250,6 +252,9 @@ a:hover{
 .copyright-text a {
     color: var(--secundario);
 }
+.google-map{
+    width: 90%;
+}
 
 /* MEDIA QUERIES */
 @media (min-width: 1200px) {
@@ -263,12 +268,18 @@ a:hover{
         padding-left: 40px;
         padding-block: 45px;
     }
+    .cards{
+        flex-wrap: nowrap !important;
+    }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .header-logo::after {
         background: linear-gradient(to right, var(--secundario) 55%, rgba(0,0,0,0) 100%) !important;
         display: block;
+    }
+    .cards{
+        flex-wrap: wrap !important;
     }
 }
 
@@ -298,5 +309,10 @@ a:hover{
         display: flex;
         flex-direction: column;
     }
+    .google-map{
+        width: 80%;
+        margin: auto
+    }
 }
+
 

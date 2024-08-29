@@ -5,8 +5,6 @@
     --white: #ffffff;
 }
 
-
-
 /* // Theme Color
 $color-primary: $color-dark;
 $color-secondary: $color-orange;
@@ -254,6 +252,16 @@ a:hover{
 }
 .google-map{
     width: 90%;
+}
+.default-img-block::before {
+    top: -1px;
+    left: -1px;
+}
+.breadcrumb-img img:nth-child(2) {
+    max-width: 20%;
+}
+.form-input:focus, .is-select-input:focus, .is-text-area:focus {
+    border-color: var(--primario);
 }
 
 /* MEDIA QUERIES */

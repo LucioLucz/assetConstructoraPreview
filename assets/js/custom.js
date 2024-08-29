@@ -342,3 +342,17 @@ if (favicon) {
 } else {
     console.log("no class en favicon");
 }
+
+let offcanvasManu = document.querySelector("#offcanvasManu");
+let btnOffCanvasContacto = document.querySelector(".category.btn-off-contacto");
+
+
+btnOffCanvasContacto.addEventListener("click", function toggleMenu() {
+    let offCanvasGral = document.querySelector(".offcanvas-backdrop.fade.show");
+    console.log("btn");
+    offcanvasManu.classList.toggle("show");
+    console.log(offcanvasManu);
+    // offCanvasGral.classList.toggle("offcanvas-backdrop");
+    console.log(offCanvasGral);
+    offCanvasGral.style.opacity = 0;
+})

@@ -321,6 +321,9 @@ a:hover{
         width: 80%;
         margin: auto
     }
+    .breadcrumb-img img:nth-child(2) {
+        height: 60px;
+    }
 }
 
 

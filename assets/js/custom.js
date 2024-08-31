@@ -321,20 +321,44 @@ categorias.push(cate4);
 categorias.push(cate5);
 categorias.push(cate6);
 
-for (let i = 0; i < categorias.length; i++) {
-    let titulo = categorias[i].title;
-    let link = categorias[i].url;
-    let li = document.createElement("li");
-    li.setAttribute("class", "dropdown-menu-item");
-    let a = document.createElement("a");
-    a.setAttribute("class", "dropdown-menu-link");
-    a.setAttribute("href", link);
-    a.textContent = titulo;
-   li.appendChild(a);
-    menuCategorias.append(li);
-    console.log(categorias[i]);
-    categoriasMobile.append(li);
+if (categoriasMobile) {
+    for (let i = 0; i < categorias.length; i++) {
+        let titulo = categorias[i].title;
+        let link = categorias[i].url;
+        let li = document.createElement("li");
+        li.setAttribute("class", "dropdown-menu-item");
+        let a = document.createElement("a");
+        a.setAttribute("class", "dropdown-menu-link");
+        a.setAttribute("href", link);
+        a.textContent = titulo;
+       li.appendChild(a);
+        // menuCategorias.append(li);
+        // console.log(categorias[i]);
+        categoriasMobile.append(li);
+    }
+} else {
+    console.log("no categorias mobile");
 }
+
+if (menuCategorias) {
+    for (let i = 0; i < categorias.length; i++) {
+        let titulo = categorias[i].title;
+        let link = categorias[i].url;
+        let li = document.createElement("li");
+        li.setAttribute("class", "dropdown-menu-item");
+        let a = document.createElement("a");
+        a.setAttribute("class", "dropdown-menu-link");
+        a.setAttribute("href", link);
+        a.textContent = titulo;
+       li.appendChild(a);
+        menuCategorias.append(li);
+    }
+} else {
+    console.log("no categorias desktop");
+}
+
+
+
 
 let favicon = document.querySelector(".meta-favicon");
 if (favicon) {
